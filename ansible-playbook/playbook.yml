@@ -1,0 +1,14 @@
+---
+- hosts: "lb"
+  become: yes
+
+  tasks:
+    - name: "Установка nginx"
+      apt:
+        name: nginx
+        state: latest
+
+    - name: "Включение сервиса"
+      ansible.builtin.service:
+        name: nginx
+        state: started
