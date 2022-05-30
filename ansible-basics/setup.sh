@@ -1,7 +1,7 @@
 bash rm-files.sh
 
-V_PORT=2430
-V_SSH_PORT=2230
+V_PORT_NGINX=2430
+V_PORT_SSH=2230
 
 # Creating Jinja2 template file for ansible playbook file
 cat << EOF > server.conf.j2
@@ -50,7 +50,7 @@ cat << EOF > playbook.yml
         src: "./server.conf.j2" # <-- .j2 - is extention for Jinja2
         dest: "/etc/nginx/conf.d/server.conf"
       vars:
-        server_port: $V_PORT
+        server_port: $V_PORT_NGINX
         server_name: jusan
         hello_message: Hello, from jusan-template example!
       notify: "reload nginx"
@@ -62,19 +62,19 @@ EOF
 
 cat << EOF > hosts.ini
 [container]
-127.0.0.1 ansible_user=root ansible_port=$V_SSH_PORT
+127.0.0.1 ansible_user=root ansible_port=$V_PORT_SSH
 EOF
 
 
 # Run Containers
 sudo docker container rm $(sudo docker container ps -a | grep -o local-vps-....) -f
-sudo docker run -d --rm --name "local-vps-$V_PORT" -p $V_PORT:$V_PORT -p $V_SSH_PORT:$V_SSH_PORT atlekbai/local-vps $V_SSH_PORT
+sudo docker run -d --rm --name "local-vps-$V_PORT_NGINX" -p $V_PORT_NGINX:$V_PORT_NGINX -p $V_PORT_SSH:$V_PORT_SSH atlekbai/local-vps $V_PORT_SSH
 sudo docker container ps
 sleep 2
 
-ssh-copy-id -p $V_SSH_PORT -i ~/.ssh/id_rsa.pub -f root@127.0.0.1
+ssh-copy-id -p $V_PORT_SSH -i ~/.ssh/id_rsa.pub -f root@127.0.0.1
 
 # Run ansible
 ansible-playbook -i hosts.ini playbook.yml
 bash rm-files.sh
-echo "try: curl localhost:$V_PORT"
+echo "try: curl localhost:$V_PORT_NGINX"
