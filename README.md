@@ -3,7 +3,7 @@
 This is a solution to ansible problems, and also a cheat sheet for the future if you remember working with ansible.
 
 ### How to use it?
-Just go to any file and you can run `bash setup.sh` .
+Just go to any directory and you can run `bash setup.sh` .
 It will also be useful if you will disassemble the scripts, and change, and see how it will work.
 
 ### Worked on
