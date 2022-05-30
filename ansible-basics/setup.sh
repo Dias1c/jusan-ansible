@@ -16,6 +16,12 @@ server {
 }
 EOF
 
+cat << EOF > hello.sh
+echo "Hello, where am I?"
+sleep 1
+echo "I hope I am in docker container. Because I must copied from local machine as hello.sh"
+EOF
+
 
 cat << EOF > playbook.yml
 ---
@@ -24,6 +30,10 @@ cat << EOF > playbook.yml
 
   tasks:
     - apt: name=nginx state=present
+
+    - copy:
+        src: "./hello.sh"
+        dest: "~/run-me.sh"
 
     - name: "Adding Users"
       user:
@@ -67,4 +77,4 @@ ssh-copy-id -p $V_SSH_PORT -i ~/.ssh/id_rsa.pub -f root@127.0.0.1
 # Run ansible
 ansible-playbook -i hosts.ini playbook.yml
 bash rm-files.sh
-echo "try: curl localhost:$V_SSH_PORT"
+echo "try: curl localhost:$V_PORT"
