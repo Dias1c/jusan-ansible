@@ -36,12 +36,11 @@ The command launches a container with certain ports, and to which you can connec
 - `--rm` - remove which, removes container after stopping it.
 - `--name "CONTAINER_NAME"` - The `--name` parameter that sets the `CONTAINER_NAME` name to the created container. Using the name it is easy to manage the container. 
 - `-p OUTSIDE_PORT:INSIDE_PORT` -  param `-p` translates the container's `INSIDE_PORT` port to the computer's `OUTSIDE_PORT`. The question will appear, why did I write twice? The first parameter -p is used for nginx server translation. And the second parameter -p is used to simply open the port, which is also used for `ssh` connection.
-- `nginx:mainline` - name of `image` by which the docker container is created.
-> and the last parameter `V_PORT_SSH` (which equal to 2222) at the end of the line opens access the port for `ssh` connection to `docker` container. Make sure of this by removing this parameter and try to connect to this container via SSH
+- `nginx:mainline` - name of `image` by which the docker container is created. It should be last parametr for docker. Why? After name of image we writes arguments, which sends to image or container as arguments. For example, here is `atlekbai/local-vps` image takes 1 argument. It is port for opening ssh port in container.
 ```bash
 V_PORT_SSH=2222
 V_PORT_NGINX=2422
-docker run -d --rm --name local-vps-$V_PORT_NGINX -p $V_PORT_NGINX:80 -p $V_PORT_SSH:$V_PORT_SSH nginx:mainline $V_PORT_SSH
+docker run -d --rm --name local-vps-$V_PORT_NGINX -p $V_PORT_NGINX:80 -p $V_PORT_SSH:$V_PORT_SSH atlekbai/local-vps $V_PORT_SSH
 ```
 
 Connection to the device via the `V_PORT_SSH` (which equal to value which you set. Ex: 2222) port.
