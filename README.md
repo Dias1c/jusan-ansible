@@ -17,7 +17,7 @@ You can parse the scripts in this order
 - [x] [ansible-hello](ansible-hello)
 - [x] [ansible-playbook](ansible-playbook)
 - [x] [ansible-basics](ansible-basics)
-- [ ] [ansible-template](ansible-template)
+- [x] [ansible-template](ansible-template)
 - [ ] [ansible-apps](ansible-apps)
 - [ ] [ansible-roles](ansible-roles)
 - [ ] [ansible-vault](ansible-vault)
