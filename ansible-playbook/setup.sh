@@ -5,8 +5,8 @@ sudo docker container rm $(sudo docker container ps -a | grep -o local-vps-....)
 # 
 
 ports="
-2421_2221
-2422_2222
+8021_2221
+8022_2222
 "
 
 # запускает образ atlekbai/local-vps с именем контейнера local-vps-22 и перенаправялет порты 22 и 80 внутрь контейнера; <- Это не будет работать

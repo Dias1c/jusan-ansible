@@ -1,6 +1,6 @@
 bash rm-files.sh
 
-V_PORT_NGINX=2430
+V_PORT_NGINX=8030
 V_PORT_SSH=2230
 
 # Creating Jinja2 template file for ansible playbook file
