@@ -36,7 +36,7 @@ The command launches a container with certain ports, and to which you can connec
 - `--rm` - remove which, removes container after stopping it.
 - `--name "CONTAINER_NAME"` - The `--name` parameter that sets the `CONTAINER_NAME` name to the created container. Using the name it is easy to manage the container. 
 - `-p OUTSIDE_PORT:INSIDE_PORT` -  param `-p` translates the container's `INSIDE_PORT` port to the computer's `OUTSIDE_PORT`. The question will appear, why did I write twice? The first parameter -p is used for nginx server translation. And the second parameter -p is used to simply open the port, which is also used for `ssh` connection.
-- `nginx:mainline` - name of `image` by which the docker container is created. It should be last parametr for docker. Why? After name of image we writes arguments, which sends to image or container as arguments. For example, here is `atlekbai/local-vps` image takes 1 argument. It is port for opening ssh port in container.
+- `nginx:mainline` - name of `image` by which the docker container is created. It should be last parametr for docker. Why? After name of image we writes arguments, which sends to image or container as arguments. For example, here is [`atlekbai/local-vps`](https://hub.docker.com/r/atlekbai/local-vps) image takes 1 argument. It is port for opening ssh port in container.
 ```bash
 V_PORT_SSH=2222
 V_PORT_NGINX=2422
