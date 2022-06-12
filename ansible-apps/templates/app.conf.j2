@@ -1,0 +1,14 @@
+upstream app {
+    {% for app in apps %}
+    server {{ app.service_name }}:{{ app.port }};
+    {% endfor %}
+}
+
+server {
+    listen {{ server_port }};
+    server_name {{ server_name }};
+    location / {
+        proxy_pass http://app;
+        add_header  X-Upstream  $upstream_addr;
+    }
+}
