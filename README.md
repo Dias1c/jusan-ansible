@@ -15,12 +15,12 @@ It will also be useful if you will disassemble the scripts, and change, and see 
 ## Viewing order
 You can parse the scripts in this order
 - [x] [ansible-hello](ansible-hello)
-- [x] [ansible-playbook](ansible-playbook)
-- [x] [ansible-basics](ansible-basics)
-- [x] [ansible-template](ansible-template)
-- [x] [ansible-apps](ansible-apps)
-- [x] [ansible-roles](ansible-roles)
-- [ ] [ansible-vault](ansible-vault)
+- [x] [ansible-playbook](ansible-playbook) link to [apt](https://stepik.org/media/attachments/lesson/698792/checker-vault.sh), [service](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/service_module.html)
+- [x] [ansible-basics](ansible-basics) link to [loop](https://docs.ansible.com/ansible/latest/user_guide/playbooks_loops.html), [jinja2](https://jinja.palletsprojects.com/en/3.1.x/templates/#synopsis)
+- [x] [ansible-template](ansible-template) link to [jinja2](https://jinja.palletsprojects.com/en/3.1.x/templates/#synopsis), [copy](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/copy_module.html), [file](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/file_module.html), [template](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/template_module.html)
+- [x] [ansible-apps](ansible-apps) link to [upstream in nginx](http://nginx.org/en/docs/http/ngx_http_upstream_module.html)
+- [x] [ansible-roles](ansible-roles) link to [roles in ansible](https://docs.ansible.com/ansible/latest/user_guide/playbooks_reuse_roles.html)
+- [x] [ansible-vault](ansible-vault) link to [vault in ansible](https://docs.ansible.com/ansible/latest/user_guide/vault.html)
 - [ ] [ansible-galaxy](ansible-galaxy)
 
 ## Explanations of frequently used commands in the script
