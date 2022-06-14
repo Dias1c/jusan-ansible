@@ -27,7 +27,7 @@
 
     - name: "mounting 'nginx.conf' to server"
       copy:
-        src: "./nginx.conf"
+        src: "nginx.conf"
         dest: "/etc/nginx/nginx.conf"
       notify: "reload-nginx"
 
@@ -38,7 +38,7 @@
 
     - name: "mounting 'serv.conf.j2'"
       template:
-        src: "./server.conf.j2"
+        src: "server.conf.j2"
         dest: "/etc/nginx/conf.d/{{ item.server_name }}.conf"
       vars:
         server_port: "{{ item.server_port }}"
