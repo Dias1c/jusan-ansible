@@ -1,0 +1,11 @@
+---
+- hosts: lb
+  become: true
+  roles:
+    - nginx
+    - nginx-configuration
+
+- hosts: apps
+  become: true
+  roles:
+    - application

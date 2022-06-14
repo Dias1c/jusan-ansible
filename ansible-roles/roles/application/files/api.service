@@ -1,0 +1,9 @@
+[Unit]
+Description=API server
+
+[Service]
+ExecStart=/tmp/api
+
+[Install]
+WantedBy=multi-user.target
+Alias=api.server
