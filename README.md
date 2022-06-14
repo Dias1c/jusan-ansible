@@ -19,7 +19,7 @@ You can parse the scripts in this order
 - [x] [ansible-basics](ansible-basics)
 - [x] [ansible-template](ansible-template)
 - [x] [ansible-apps](ansible-apps)
-- [ ] [ansible-roles](ansible-roles)
+- [x] [ansible-roles](ansible-roles)
 - [ ] [ansible-vault](ansible-vault)
 - [ ] [ansible-galaxy](ansible-galaxy)
 
