@@ -1,0 +1,13 @@
+---
+- hosts: lb
+  become: true
+  roles:
+    - nginx
+    - nginx-configuration
+  vars_files:
+    - ./vars/nginx_secret_token.yaml # <----- читаем переменные из vars/api_key.yml
+
+- hosts: apps
+  become: true
+  roles:
+    - application

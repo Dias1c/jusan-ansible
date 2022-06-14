@@ -1,0 +1,14 @@
+- name: "download 'api' file"
+  get_url:
+    url: https://github.com/jusan-singularity/track-devops-systemd-api/releases/download/v0.1/api
+    dest: /tmp/api
+    mode: '0755'
+- name: "mount 'api.service' file for 'api'"
+  copy:
+    src: api.service
+    dest: /etc/systemd/system/api.service
+- name: "run service"
+  service:
+    name: api
+    state: started
+    enabled: yes
