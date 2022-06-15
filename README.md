@@ -5,6 +5,7 @@ This is a solution to ansible problems, and also a cheat sheet for the future if
 ### How to use it?
 Just go to any directory and you can run `bash setup.sh` .
 It will also be useful if you will disassemble the scripts, and change, and see how it will work.
+> Also you can watch ansible course on <img src="https://www.youtube.com/s/desktop/a14aba22/img/favicon_144x144.png" height="12"/> youtube by this [link](https://youtube.com/playlist?list=PLg5SS_4L6LYufspdPupdynbMQTBnZd31N)
 
 ### Worked on
 - Debian GNU/Linux 11 (bullseye) 
@@ -21,7 +22,7 @@ You can parse the scripts in this order
 - [x] [ansible-apps](ansible-apps) link to [upstream in nginx](http://nginx.org/en/docs/http/ngx_http_upstream_module.html)
 - [x] [ansible-roles](ansible-roles) link to [roles in ansible](https://docs.ansible.com/ansible/latest/user_guide/playbooks_reuse_roles.html)
 - [x] [ansible-vault](ansible-vault) link to [vault in ansible](https://docs.ansible.com/ansible/latest/user_guide/vault.html)
-- [ ] [ansible-galaxy](ansible-galaxy)
+<!-- - [ ] [ansible-galaxy](ansible-galaxy) -->
 
 ## Explanations of frequently used commands in the script
 These commands were often used in the script. I wrote explanations to them.
